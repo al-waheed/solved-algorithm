@@ -278,101 +278,101 @@ console.log(set);
 
 
 
-function convertTo24Hour(time){
- 
- let separateMeridiem = time.split(" ");   // ["12:00:00", "AM"]
-  
-time = separateMeridiem[0].split(":");        //  ["12", "00", "00"]
-   
-  
-if(time[0] == 12  &&  separateMeridiem[1] === 'AM'){
+function convertTo24Hour(time) {
 
-time[0] = parseInt(time[0])  - 12 ;
-  
-}else
- if(time[0] == 12  &&  separateMeridiem[1] == 'PM'){
-time[0] =  parseInt(time[0]) + 0;
-  
-}else
- if(time[0] < 12  &&  separateMeridiem[1]=== 'AM'){
- 
-    time[0] =  parseInt(time[0]) + 0;
-  
-}
-if(time[0] < 12  &&  separateMeridiem[1]=== 'PM'){
+    let separateMeridiem = time.split(" ");   // ["12:00:00", "AM"]
 
-time[0] = parseInt(time[0]) + 12 ;
-  
-}
-  
-let convertedTime = time[0] + ':' + time[1] + ':' + time[2];
-return convertedTime;
-  
- 
-} 
- 
-convertTo24Hour('07:45:15 PM');  
- 
- 
-function convertTo12Hour(time1){
-   
-    
-let time = time1.split(":");
-    
-let  meridiem = 'AM';
+    time = separateMeridiem[0].split(":");        //  ["12", "00", "00"]
 
-    
-if (time[0] >= 12) {
-       
-meridiem  = 'PM';
-    
+
+    if (time[0] == 12 && separateMeridiem[1] === 'AM') {
+
+        time[0] = parseInt(time[0]) - 12;
+
+    } else
+        if (time[0] == 12 && separateMeridiem[1] == 'PM') {
+            time[0] = parseInt(time[0]) + 0;
+
+        } else
+            if (time[0] < 12 && separateMeridiem[1] === 'AM') {
+
+                time[0] = parseInt(time[0]) + 0;
+
+            }
+    if (time[0] < 12 && separateMeridiem[1] === 'PM') {
+
+        time[0] = parseInt(time[0]) + 12;
+
+    }
+
+    let convertedTime = time[0] + ':' + time[1] + ':' + time[2];
+    return convertedTime;
+
+
 }
 
-    
-if (time[0] > 12) {
-        
-time[0] = time[0] - 12;
-}
-convertedT024Hour = time[0] + ':' + time[1] + ':' + time[2] + ' ' + meridiem;
-return convertedT024Hour;
+convertTo24Hour('07:45:15 PM');
+
+
+function convertTo12Hour(time1) {
+
+
+    let time = time1.split(":");
+
+    let meridiem = 'AM';
+
+
+    if (time[0] >= 12) {
+
+        meridiem = 'PM';
+
+    }
+
+
+    if (time[0] > 12) {
+
+        time[0] = time[0] - 12;
+    }
+    convertedT024Hour = time[0] + ':' + time[1] + ':' + time[2] + ' ' + meridiem;
+    return convertedT024Hour;
 
 }
 
 convertTo12Hour('18:00:00');
- 
-function convertTo24Hour(time12hours){
-  let separateMeridiem = time12hours.split(" ");    // ["12:00:00", "AM"]
-  time = separateMeridiem[0].split(":");            //["12", "00", "00"]
-   
-  if(time[0] == 12  &&  separateMeridiem[1] === 'AM'){
-    time[0] = parseInt(time[0])  - 12 ;
-  }else
-  
-  if(time[0] == 12  &&  separateMeridiem[1] == 'PM'){
-    time[0] =  parseInt(time[0]) + 0;
-  }else
-  
-  if(time[0] < 12  &&  separateMeridiem[1]=== 'AM'){
-     time[0] =  parseInt(time[0]) + 0;
-  }
-  
-  if(time[0] < 12  &&  separateMeridiem[1]=== 'PM'){
-     time[0] = parseInt(time[0]) + 12 ;
-  }
-  
-  let convertedTime = time[0] + ':' + time[1] + ':' + time[2];
-  
-  return convertedTime;
-  
- } 
 
- function convertTo12Hour(time24hours){
-   
+function convertTo24Hour(time12hours) {
+    let separateMeridiem = time12hours.split(" ");    // ["12:00:00", "AM"]
+    time = separateMeridiem[0].split(":");            //["12", "00", "00"]
+
+    if (time[0] == 12 && separateMeridiem[1] === 'AM') {
+        time[0] = parseInt(time[0]) - 12;
+    } else
+
+        if (time[0] == 12 && separateMeridiem[1] == 'PM') {
+            time[0] = parseInt(time[0]) + 0;
+        } else
+
+            if (time[0] < 12 && separateMeridiem[1] === 'AM') {
+                time[0] = parseInt(time[0]) + 0;
+            }
+
+    if (time[0] < 12 && separateMeridiem[1] === 'PM') {
+        time[0] = parseInt(time[0]) + 12;
+    }
+
+    let convertedTime = time[0] + ':' + time[1] + ':' + time[2];
+
+    return convertedTime;
+
+}
+
+function convertTo12Hour(time24hours) {
+
     let time = time24hours.split(":");
-    let  meridiem = 'AM';
+    let meridiem = 'AM';
 
     if (time[0] >= 12) {
-       meridiem  = 'PM';
+        meridiem = 'PM';
     }
 
     if (time[0] > 12) {
@@ -384,58 +384,58 @@ function convertTo24Hour(time12hours){
     return convertedT024Hour;
 }
 
-convertTo24Hour('07:45:15 PM'); 
+convertTo24Hour('07:45:15 PM');
 //convertTo12Hour('18:00:00');
 
 let userInput = prompt("Write in and press ok");
-let processInput = (((userInput.split('')).sort()).filter(item => item.trim() !== '')), 
-count = {};
+let processInput = (((userInput.split('')).sort()).filter(item => item.trim() !== '')),
+    count = {};
 
-processInput.forEach((el) =>{
-  count[el] = count[el] + 1 || 1;
+processInput.forEach((el) => {
+    count[el] = count[el] + 1 || 1;
 });
 
 console.log(count);
 
 // https://repl.it/MXcz/4
- 
-function arithmeticProgression(a,b){
-  
-let result= [];
-   
-if (a === undefined && b === undefined ) {
-     
-   return "No argument passed";
-    
-} else
- if ((a === undefined && b !== undefined ) || (a !== undefined && b === undefined )) {
- 
-       return "Enter second argument";
-    
-} else if (a instanceof Array || b instanceof Array) {
- 
-       return 'Passed argument must not be an array';
-    
-} else if (typeof a === 'string' || typeof b === 'string') {
-   
-     return 'Passed argument must not be a string';
-  
-} else if (typeof a !== 'number' || typeof a !== 'number') {
-  
- return 'Passed argument must be a valid number';
-  
-} else{
-//valid argument
-      
-  for(let i = a; i<=b; i = i + 3){
-  
-      result.push(i);
-   
-   }
-     
- return result;
-   
- } 
+
+function arithmeticProgression(a, b) {
+
+    let result = [];
+
+    if (a === undefined && b === undefined) {
+
+        return "No argument passed";
+
+    } else
+        if ((a === undefined && b !== undefined) || (a !== undefined && b === undefined)) {
+
+            return "Enter second argument";
+
+        } else if (a instanceof Array || b instanceof Array) {
+
+            return 'Passed argument must not be an array';
+
+        } else if (typeof a === 'string' || typeof b === 'string') {
+
+            return 'Passed argument must not be a string';
+
+        } else if (typeof a !== 'number' || typeof a !== 'number') {
+
+            return 'Passed argument must be a valid number';
+
+        } else {
+            //valid argument
+
+            for (let i = a; i <= b; i = i + 3) {
+
+                result.push(i);
+
+            }
+
+            return result;
+
+        }
 
 }
 
